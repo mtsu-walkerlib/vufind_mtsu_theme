@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+	<link rel="alternate" type="application/rss+xml" title="Latest Answers" href="//libanswers.mtsu.edu/rss.php?m=new&iid=1240&gid=1252" />	<link rel="stylesheet" media="screen" href="/css250/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" media="screen" href="/css250/LibAnswers_public.css" />
+	
+    <title>
+        Ask a Librarian - LibAnswers    </title>
+
+	<style type="text/css">
+	        	.s-la-color-bars { background-image: none; background-color: #f0f2f5; }.s-la-color-bars .s-la-navbrowse .navbar-text { color: #f0f2f5; }.s-la-color-bars-border { border-color: #f3f0f5; }.s-la-color-bars, .s-la-color-bars .navbar-text, .s-la-color-bars.s-la-box-title h2 { color: #5784c7; }
+	        </style>	
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="/js250/LibAnswers_public.min.js"></script>
+    <script>
+    		var springSpace = springSpace || {};
+			springSpace.la = springSpace.la || {};
+			springSpace.la.Page = {
+				http: 'http:',
+				domain: 'libanswers.mtsu.edu',
+				ssl_domain: 'mtsu.libanswers.com',
+				iid: 1240,
+				group_id: 1252,
+				group_slug: '',
+				faq_id: 0,
+				qlog_id: 0,
+				solrUrl: 'http://search-platform.libapps.com/la2/'
+			};
+						
+    	</script>	
+		
+</head>
+<body id="s-la-page-5064" class="s-la-page-public s-la-page-home">
+        <a id="s-la-public-skiplink" class="alert-info" href="#s-la-page-maincontent"></a>
+	<!-- start custom header -->
+	<div id="mtsu_header" style="max-width: 1140px; margin:auto"><img name="n00000001" src="http://library.mtsu.edu/images/springshare_header.png"  width="1140" id="n00000001" usemap="#m_00000001" alt="" /><map name="m_00000001" id="m_00000001">
+<area shape="rect" coords="689,0,770,30" href="http://www.mtsu.edu/contact.php" alt="MTSU Directory" />
+<area shape="rect" coords="550,0,676,30" href="http://www.goblueraiders.com/" alt="Blue Raider Athletics" />
+<area shape="rect" coords="457,0,536,30" href="http://www.mtsu.edu/email/index.php" alt="MTSU Email" />
+<area shape="rect" coords="457,0,536,30" href="http://pipeline.mtsu.edu/" alt="Pipeline" />
+<area shape="rect" coords="239,0,324,30" href="http://www.mtsu.edu/atoz.php" alt="MTSU A-Z" />
+<area shape="rect" coords="810,132,964,170" href="https://library2.mtsu.edu/iii/cas/login?service=https%3A%2F%2Flibrary2.mtsu.edu%3A443%2Fpatroninfo~S1%2FIIITICKET&amp;scope=1" title="My Library Account" alt="My Library Account" />
+<area shape="rect" coords="713,132,804,170" href="http://library.mtsu.edu/maps.php" title="About Us" alt="About Us" />
+<area shape="rect" coords="595,132,710,170" href="http://library.mtsu.edu/ask.php" title="Get Help" alt="Get Help" />
+<area shape="rect" coords="486,132,586,170" href="http://library.mtsu.edu/technology.php" title="Technology" alt="Technology" />
+<area shape="rect" coords="380,132,468,170" href="http://library.mtsu.edu/ask.php" title="Ask A Librarian" alt="Ask A Librarian" />
+<area shape="rect" coords="252,132,372,170" href="http://library.mtsu.edu/borrow.php" title="Using the Library" alt="Using the Library" />
+<area shape="rect" coords="72,132,238,170" href="http://library.mtsu.edu/" alt="Library Home" />
+<area shape="rect" coords="697,72,1032,132" href="http://library.mtsu.edu/hours.php" title="Today's Hours" alt="Today's Hours" />
+<area shape="rect" coords="223,72,612,132" href="http://library.mtsu.edu" title="Find Library Materials" alt="Find Library Materials" />
+<area shape="rect" coords="22,0,208,132" href="http://www.mtsu.edu" title="MTSU Homepage" alt="MTSU Homepage" />
+</map></div>	<!-- end custom header -->
+	<div class="container">
+		<div id=s-la-bc class="row" role="navigation">
+			<div class="col-md-12">
+			<ol class="breadcrumb s-la-color-bars s-la-color-bars-border">
+				<li><a href="http://library.mtsu.edu/">Library</a></li>
+				<li ><a href="http://161.45.205.32/vufind">Start a New Search</a></li></ol>
+			</div>
+
+<? $account = $this->auth()->getManager(); ?>
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <i class="fa fa-bars"></i>
+  </button>
+  <!--  <a role="logo" class="navbar-brand" href="http://library.mtsu.edu">Library Home</a><br /><br />
+  <p><strong><a href="<?=$this->url('home')?>">Start a New Search </a></strong></p>  --> 
+</div>
+<? if ($this->layout()->searchbox !== false): ?>
+  <section class="visible-lg">
+    <?=$this->layout()->searchbox ?>
+  </section>
+<? endif; ?>
+<? if (!isset($this->layout()->renderingError)): ?>
+  <div class="collapse navbar-collapse" id="header-collapse">
+    <ul role="navigation" class="nav navbar-nav navbar-right">
+      <? if ($this->feedback()->tabEnabled()): ?>
+        <li>
+          <a id="feedbackLink" class="modal-link" href="<?=$this->url('feedback-home') ?>"><i class="fa fa-envelope"></i> <?=$this->transEsc("Feedback")?></a>
+        </li>
+      <? endif; ?>
+      <? $cart = $this->cart(); if ($cart->isActive()): ?>
+        <li id="cartSummary">
+          <a id="cartItems" class="modal-link" title="<?=$this->transEsc('View Book Bag')?>" href="<?=$this->url('cart-home')?>"><i class="fa fa-suitcase"></i> <strong><?=count($cart->getItems())?></strong> <?=$this->transEsc('items')?><?=$cart->isFull() ? ' (' .  $this->transEsc('bookbag_full') . ')' : ''?></a>
+        </li>
+      <? endif; ?>
+      <? if (is_object($account) && $account->loginEnabled()): // hide login/logout if unavailable ?>
+        <li class="logoutOptions<? if(!$account->isLoggedIn()): ?> hidden<? endif ?>">
+          <a href="<?=$this->url('myresearch-home', array(), array('query' => array('redirect' => 0)))?>" class="modal-link" title="<?=$this->transEsc("Your Account")?>"><i class="fa fa-home"></i> <?=$this->transEsc("Your Account")?></a>
+        </li>
+        <li class="logoutOptions<? if(!$account->isLoggedIn()): ?> hidden<? endif ?>">
+          <a href="<?=$this->url('myresearch-logout')?>" class="modal-link" title="<?=$this->transEsc("Log Out")?>"><i class="fa fa-sign-out"></i> <?=$this->transEsc("Log Out")?></a>
+        </li>
+        <li id="loginOptions"<? if($account->isLoggedIn()): ?> class="hidden"<? endif ?>>
+          <? if ($sessionInitiator = $account->getSessionInitiator($this->serverUrl($this->url('myresearch-home')))): ?>
+            <a href="<?=$this->escapeHtmlAttr($sessionInitiator)?>"><i class="fa fa-sign-in"></i> <?=$this->transEsc("Institutional Login")?></a>
+          <? else: ?>
+            <a href="https://library2.mtsu.edu/iii/cas/login?service=https%3A%2F%2Flibrary2.mtsu.edu%3A443%2Fpatroninfo~S1%2FIIITICKET&scope=1" class="modal-link" title="<?=$this->transEsc("Login")?>"><i class="fa fa-sign-in"></i> <?=$this->transEsc("Login")?></a>
+          <? endif; ?>
+        </li>
+      <? endif; ?>
+
+      <? if (isset($this->layout()->themeOptions) && count($this->layout()->themeOptions) > 1): ?>
+        <li class="dropdown">
+          <form method="post" name="themeForm" action="" id="themeForm">
+            <input type="hidden" name="ui"/>
+          </form>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=$this->transEsc("Theme")?> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <? foreach ($this->layout()->themeOptions as $current): ?>
+              <li<?=$current['selected'] ? ' class="active"' : ''?>><a href="#" onClick="document.themeForm.ui.value='<?=$this->escapeHtmlAttr($current['name'])?>';document.themeForm.submit()"><?=$this->transEsc($current['desc'])?></a></li>
+            <? endforeach; ?>
+          </ul>
+        </li>
+      <? endif; ?>
+
+      <? if (isset($this->layout()->allLangs) && count($this->layout()->allLangs) > 1): ?>
+        <li class="dropdown">
+          <form method="post" name="langForm" action="" id="langForm">
+            <input type="hidden" name="mylang"/>
+          </form>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=$this->transEsc("Language")?> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <? foreach ($this->layout()->allLangs as $langCode => $langName): ?>
+            <li<?=$this->layout()->userLang == $langCode ? ' class="active"' : ''?>><a href="#" onClick="document.langForm.mylang.value='<?=$langCode?>';document.langForm.submit()"><?=$this->displayLanguageOption($langName)?></a></li>
+          <? endforeach; ?>
+          </ul>
+        </li>
+      <? endif; ?>
+    </ul>
+  </div>
+<? endif; ?>

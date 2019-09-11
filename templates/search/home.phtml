@@ -1,0 +1,41 @@
+<?
+  // Set page title.
+  $this->headTitle($this->translate('Search Home'));
+
+  // Disable top search box -- this page has a special layout.
+  $this->layout()->searchbox = false;
+
+  // Set default value if necessary:
+  if (!isset($this->searchClassId)) {
+    $this->searchClassId = 'Solr';
+  }
+
+  // Load search actions and settings (if any):
+  $options = $this->searchOptions($this->searchClassId);
+  $basicSearch = $options->getSearchAction();
+  $advSearch = $options->getAdvancedSearchAction();
+
+  $this->layout()->breadcrumbs = false;
+?>
+
+<div class="searchHomeContent">
+  <? if ($this->ils()->getOfflineMode() == "ils-offline"): ?>
+    <div class="alert alert-warning">
+      <h2><?=$this->transEsc('ils_offline_title')?></h2>
+      <p><strong><?=$this->transEsc('ils_offline_status')?></strong></p>
+      <p><?=$this->transEsc('ils_offline_home_message')?></p>
+      <? $supportEmail = $this->escapeHtmlAttr($this->systemEmail()); ?>
+      <p><a href="mailto:<?=$supportEmail?>"><?=$supportEmail?></a></p>
+    </div>
+  <? endif; ?>
+  <div class="well well-lg clearfix">
+    <?=$this->render("search/searchbox.phtml")?>
+  </div>
+</div>
+<h5>Searching Hints:</h5>
+<ul>
+    <li>Use quotes to search for <strong>phrases</strong>  example: <a href=https://find.mtsu.edu/vufind/Search/Results?lookfor=%22Global+Warming%22+&type=AllFields>"Global Warming"</a></li>
+    <li>Use an * for <strong>wildcard searches</strong>  example: <a href=https://find.mtsu.edu/vufind/Search/Results?lookfor=biochem*&type=AllFields&limit=20&sort=relevance>biochem*</a>  will return biochemisty and biochemical</li>
+     <li>AND, OR and NOT can be used for <strong>boolean logic</strong>  example:  <a href=https://find.mtsu.edu/vufind/Search/Results?lookfor=%28%28biomedical+AND+engineering%29+NOT+nuclear%29&type=AllFields&limit=20&sort=relevance>((biomedical AND engineering) NOT nuclear)</a> Boolean operators must be ALL CAPS</li>
+     <li> <a href="https://find.mtsu.edu/vufind/Help/Home?topic=search" onClick="window.open('https://find.mtsu.edu/vufind/Help/Home?topic=search', 'Help', 'width=625, height=510'); return false;" title="Help with Searching">Help with Search Operators</a></li>
+     </ul>
